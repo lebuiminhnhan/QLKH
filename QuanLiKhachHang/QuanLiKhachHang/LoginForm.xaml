@@ -1,0 +1,76 @@
+﻿<Window x:Name="loginform" x:Class="QuanLiKhachHang.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLiKhachHang"
+        xmlns:uc="clr-namespace:QuanLiKhachHang.MyUserControl"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        WindowStyle="None"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Đăng nhập" WindowStartupLocation="CenterScreen" Height="500" Width="400" Foreground="{x:Null}" MaxWidth="400" MaxHeight="500" ResizeMode="NoResize" Icon="user.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFC31717" Offset="0"/>
+            <GradientStop Color="White" Offset="0.472"/>
+            <GradientStop Color="#FF4EF3E4" Offset="0.979"/>
+            <GradientStop Color="White" Offset="0.776"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"  VerticalAlignment="Center">
+            <Button
+    Style="{DynamicResource MaterialDesignRaisedButton}"
+    materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                Siêu thị Co.op Mart Trà Vinh
+            </Button>
+        </Grid>
+        <Button
+            Height="40"
+            Width="100"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Thoát"
+    Margin="200,360,100,60" Background="#FFC31717" Grid.Row="1" />
+        <Button x:Name="btnlogin"
+            Height="40"
+                Width="100"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    materialDesign:ButtonProgressAssist.Value="-1"
+    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+    Content="Đăng nhập"
+    Margin="100,360,200,60" Click="btnlogin_Click" Grid.Row="1" />
+        <TextBox x:Name="usernamebox"
+            Width="200"
+            Height="50"
+  materialDesign:HintAssist.Hint="Tài khoản"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="100,189,100,221" Foreground="#DD000000" FontWeight="Bold" FontSize="18" BorderBrush="#89000000" Grid.Row="1" />
+        <PasswordBox
+            Width="200"
+            Height="50"
+            
+  x:Name="PasswordBox"
+  materialDesign:HintAssist.Hint="Mật khẩu"
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="100,255,100,155" Foreground="#DD000000" FontWeight="Bold" FontSize="18" BorderBrush="#89000000" Grid.Row="1" />
+
+
+        <Image Margin="115,4,115,0" Width="170" Height="170" Source="user.png" Stretch="Fill" VerticalAlignment="Top" Grid.Row="1"/>
+
+    </Grid>
+</Window>
