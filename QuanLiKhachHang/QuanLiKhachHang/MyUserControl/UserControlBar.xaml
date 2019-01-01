@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuanLiKhachHang.MyUserControl"
              mc:Ignorable="d" 
+              Name="ucControlBar"
+              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
@@ -12,82 +14,121 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
              d:DesignHeight="450" d:DesignWidth="800">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding MouseMoveWindowCommand}" CommandParameter="{Binding ElementName=ucControlBar}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
-        <Menu
-  IsMainMenu="True" Background="{x:Null}" Margin="0,0,0,459">
-            <MenuItem
+        <materialDesign:ColorZone Mode="PrimaryLight" Background="#FF000E0C" >
+            <DockPanel>
+                <materialDesign:PopupBox
+      DockPanel.Dock="Left"
+      PlacementMode="BottomAndAlignRightEdges" Foreground="#DD0DF9B9">
+                    <Menu
+  IsMainMenu="True">
+                        <MenuItem
     Header="_File">
-                <MenuItem
+                            <MenuItem
       Header="Save">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon
           Kind="ContentSave" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem
       Header="Save As.." />
-                <MenuItem
+                            <MenuItem
       Header="Exit"
       InputGestureText="Ctrl+E">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon
           Kind="ExitToApp" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />
-                <MenuItem
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem
       Header="Excellent"
       IsCheckable="True"
       IsChecked="True" />
-                <MenuItem
+                            <MenuItem
       Header="Rubbish"
       IsCheckable="True" />
-                <MenuItem
+                            <MenuItem
       Header="Dig Deeper"
       InputGestureText="Ctrl+D">
-                    <MenuItem
+                                <MenuItem
         Header="Enlightenment?"
         IsCheckable="True" />
-                    <MenuItem
+                                <MenuItem
         Header="Disappointment"
         IsCheckable="True" />
-                </MenuItem>
-                <MenuItem
+                            </MenuItem>
+                            <MenuItem
       Header="Look Deeper"
       InputGestureText="Ctrl+D">
-                    <MenuItem
+                                <MenuItem
         Header="Plain" />
-                    <MenuItem
+                                <MenuItem
         Header="Ice Cream" />
-                </MenuItem>
-            </MenuItem>
-            <MenuItem
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem
     Header="_Edit">
-                <MenuItem
+                            <MenuItem
       Header="_Cut"
       Command="Cut">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon
           Kind="ContentCut" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem
       Header="_Copy"
       Command="Copy">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon
           Kind="ContentCopy" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem
       Header="_Paste"
       Command="Paste">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon
           Kind="ContentPaste" />
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-        </Menu>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </materialDesign:PopupBox>
+                <StackPanel DockPanel.Dock="Right"  Background="Transparent" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="2 4 2 4"></Setter>
+                            <Setter Property="Width" Value="40"></Setter>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Command="{Binding MinimizeWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                        ToolTip="Thu nhỏ" ToolBar.OverflowMode="AsNeeded" Background="ForestGreen">
+                        <materialDesign:PackIcon Kind="WindowMinimize" />
+                    </Button>
+                    <Button Command="{Binding MaximizeWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                        ToolTip="Phóng to" ToolBar.OverflowMode="AsNeeded" Background="#FF223A8B">
+                        <materialDesign:PackIcon Kind="WindowMaximize" />
+                    </Button>
+                    <Button Command="{Binding CloseWindowCommand}" 
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                            ToolTip="Thoát" ToolBar.OverflowMode="AsNeeded" Background="Red">
+                        <materialDesign:PackIcon Kind="WindowClose" />
+                    </Button>
+                </StackPanel>
+
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                                   </StackPanel>
+            </DockPanel>
+        </materialDesign:ColorZone>
     </Grid>
 </UserControl>

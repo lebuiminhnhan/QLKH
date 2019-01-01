@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiKhachHang.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace QuanLiKhachHang.MyUserControl
     /// </summary>
     public partial class UserControlBar : UserControl
     {
+        public ControlBarViewModel Viewmodel { get; set; }
+
         public UserControlBar()
         {
             InitializeComponent();
+            this.DataContext = Viewmodel = new ControlBarViewModel();
         }
     }
 }
