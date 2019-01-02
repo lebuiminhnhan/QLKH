@@ -63,7 +63,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" ToolTip="Thêm Khách Hàng">
+                    <Button Grid.Column="0" Command="{Binding CustomerCommand}" ToolTip="Thêm Khách Hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>

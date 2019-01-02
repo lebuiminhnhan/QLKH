@@ -48,5 +48,10 @@ namespace QuanLiKhachHang
                
             }
         }
+
+        private void BtnThoat_Click(object sender, RoutedEventArgs e)
+        {
+            loginform.Close();
+        }
     }
 }

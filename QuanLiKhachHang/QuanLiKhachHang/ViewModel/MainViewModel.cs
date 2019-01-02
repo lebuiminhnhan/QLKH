@@ -12,7 +12,7 @@ namespace QuanLiKhachHang.ViewModel
     {
         public bool Isloaded = false;
         public ICommand LoadedWindowCommand { get; set; }
-
+        public ICommand CustomerCommand { get; set; }
         // mọi thứ xử lý sẽ nằm trong này
         public MainViewModel()
         {
@@ -22,6 +22,8 @@ namespace QuanLiKhachHang.ViewModel
                 loginWindow.ShowDialog();
             }
               );
+
+            CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { AddCustomer wd = new AddCustomer(); wd.ShowDialog(); });
         }
 
     }

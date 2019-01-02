@@ -56,3 +56,5 @@ D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang.csproj.GenerateResource.cache
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang.csproj.CoreCompileInputs.cache
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang.csproj.CopyComplete
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\AddCustomer.g.cs
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\AddCustomer.baml

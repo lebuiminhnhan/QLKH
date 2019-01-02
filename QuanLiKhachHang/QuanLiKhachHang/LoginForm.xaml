@@ -38,7 +38,7 @@
                 Siêu thị Co.op Mart Trà Vinh
             </Button>
         </Grid>
-        <Button
+        <Button x:Name="BtnThoat"
             Height="40"
             Width="100"
     Style="{StaticResource MaterialDesignRaisedButton}"
@@ -46,7 +46,7 @@
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
     Content="Thoát"
-    Margin="200,360,100,60" Background="#FFC31717" Grid.Row="1" />
+    Margin="0,364,80,0" Background="#FFC31717" Grid.Row="1" Click="BtnThoat_Click" HorizontalAlignment="Right" VerticalAlignment="Top" />
         <Button x:Name="btnlogin"
             Height="40"
                 Width="100"
@@ -55,7 +55,7 @@
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
     Content="Đăng nhập"
-    Margin="100,360,200,60" Click="btnlogin_Click" Grid.Row="1" />
+    Margin="80,0,0,64" Click="btnlogin_Click" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
         <TextBox x:Name="usernamebox"
             Width="200"
             Height="50"
