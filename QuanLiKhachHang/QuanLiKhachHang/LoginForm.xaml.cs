@@ -24,30 +24,8 @@ namespace QuanLiKhachHang
             InitializeComponent();
             
         }
-        QLKHDataContext db = new QLKHDataContext();
-        private void btnlogin_Click(object sender, RoutedEventArgs e)
-        {
-           
-            MainWindow m = new MainWindow();
-           
-            try
-            {
-                if(db.tblTaiKhoans.Where(x=>x.TenDangNhap == usernamebox.Text && x.MatKhau == PasswordBox.Password).FirstOrDefault() != null)
-                {
-                   
-                    m.ShowDialog();
-                    loginform.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
-                }
-            }
-            catch ( Exception)
-            {
-               
-            }
-        }
+       
+        
 
         private void BtnThoat_Click(object sender, RoutedEventArgs e)
         {

@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -44,8 +50,11 @@
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -70,13 +79,57 @@
     <Compile Include="AddCustomer.xaml.cs">
       <DependentUpon>AddCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControl\UserControlBar.xaml.cs">
-      <DependentUpon>UserControlBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="QLKH.designer.cs">
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\QLKHDataBase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLKH.dbml</DependentUpon>
+      <DependentUpon>QLKHDataBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLKHDataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\QLKHDataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKHDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblGiaoDich.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblKhachHang.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblLichSuGiaoDich.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblLoaiSanPham.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblNhaCungCap.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblNhanVien.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblQuyen.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblSanPham.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblSanPhamGiaoDich.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblTaiKhoan.cs">
+      <DependentUpon>QLKHDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\UserControlBar.xaml.cs">
+      <DependentUpon>UserControlBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
@@ -131,18 +184,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\QLKHDataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLKHDataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\QLKHDataBase.edmx.diagram">
+      <DependentUpon>QLKHDataBase.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="QLKH.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLKH.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKH.dbml.layout">
-      <DependentUpon>QLKH.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -153,9 +205,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Content Include="Model\QLKHDataBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLKHDataBase.Context.cs</LastGenOutput>
+      <DependentUpon>QLKHDataBase.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\QLKHDataBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLKHDataBase.edmx</DependentUpon>
+      <LastGenOutput>QLKHDataBase.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiKhachHang.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,9 @@ namespace QuanLiKhachHang.ViewModel
               );
 
             CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { AddCustomer wd = new AddCustomer(); wd.ShowDialog(); });
+
+
+            MessageBox.Show(DataProvider.Ins.DB.tblKhachHang.Select(x => x.HoTen).First());
         }
 
     }

@@ -55,7 +55,7 @@
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
     Content="Đăng nhập"
-    Margin="80,0,0,64" Click="btnlogin_Click" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+    Margin="80,0,0,64"  Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
         <TextBox x:Name="usernamebox"
             Width="200"
             Height="50"
