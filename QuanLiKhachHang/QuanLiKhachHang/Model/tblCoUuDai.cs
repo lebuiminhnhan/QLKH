@@ -12,16 +12,14 @@ namespace QuanLiKhachHang.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblTaiKhoan
+    public partial class tblCoUuDai
     {
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
-        public int MaQuyen { get; set; }
-        public Nullable<int> MaNV { get; set; }
-        public Nullable<int> MaKH { get; set; }
+        public int MaUD { get; set; }
+        public int MaKH { get; set; }
+        public int MaGD { get; set; }
     
-        public virtual tblNhanVien tblNhanVien { get; set; }
-        public virtual tblQuyen tblQuyen { get; set; }
+        public virtual tblUuDai tblUuDai { get; set; }
+        public virtual tblGiaoDich tblGiaoDich { get; set; }
         public virtual tblKhachHang tblKhachHang { get; set; }
     }
 }

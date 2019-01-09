@@ -26,8 +26,6 @@ namespace QuanLiKhachHang.Model
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<tblGiaoDich> tblGiaoDich { get; set; }
-        public virtual DbSet<tblKhachHang> tblKhachHang { get; set; }
         public virtual DbSet<tblLichSuGiaoDich> tblLichSuGiaoDich { get; set; }
         public virtual DbSet<tblLoaiSanPham> tblLoaiSanPham { get; set; }
         public virtual DbSet<tblNhaCungCap> tblNhaCungCap { get; set; }
@@ -36,5 +34,9 @@ namespace QuanLiKhachHang.Model
         public virtual DbSet<tblSanPham> tblSanPham { get; set; }
         public virtual DbSet<tblSanPhamGiaoDich> tblSanPhamGiaoDich { get; set; }
         public virtual DbSet<tblTaiKhoan> tblTaiKhoan { get; set; }
+        public virtual DbSet<tblCoUuDai> tblCoUuDai { get; set; }
+        public virtual DbSet<tblUuDai> tblUuDai { get; set; }
+        public virtual DbSet<tblGiaoDich> tblGiaoDich { get; set; }
+        public virtual DbSet<tblKhachHang> tblKhachHang { get; set; }
     }
 }

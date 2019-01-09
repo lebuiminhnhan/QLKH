@@ -26,7 +26,9 @@ namespace QuanLiKhachHang.ViewModel
 
         public bool Isloaded = false;
         public ICommand LoadedWindowCommand { get; set; }
+        public ICommand Refresh { get; set; }
         public ICommand CustomerCommand { get; set; }
+        public ICommand GiaoDichCommand { get; set; }
         // mọi thứ xử lý sẽ nằm trong này
         public MainViewModel()
         {
@@ -46,9 +48,7 @@ namespace QuanLiKhachHang.ViewModel
                 {
                     p.Show();
                     LoadDL();
-                    SLGD = DataProvider.Ins.DB.tblGiaoDich.Count();
-                    Tam = KhachHangList.Count();
-                    TongThu = DataProvider.Ins.DB.tblGiaoDich.Sum(x=>x.TienThanhToan);
+                    
                 }
                 else
                 {
@@ -58,15 +58,19 @@ namespace QuanLiKhachHang.ViewModel
               );
 
             CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { AddCustomer wd = new AddCustomer(); wd.ShowDialog(); });
+            GiaoDichCommand = new RelayCommand<object>((p) => { return true; }, (p) => { GiaoDichWindow wd = new GiaoDichWindow(); wd.ShowDialog(); });
+            Refresh = new RelayCommand<object>((p) => { return true; }, (p) => { LoadDL(); });
 
-
-           // MessageBox.Show(DataProvider.Ins.DB.tblKhachHang.Select(x => x.HoTen).First());
+            // MessageBox.Show(DataProvider.Ins.DB.tblKhachHang.Select(x => x.HoTen).First());
         }
        
         public void LoadDL()
         {
            
-            KhachHangList = new ObservableCollection<tblKhachHang>(DataProvider.Ins.DB.tblKhachHang.OrderByDescending(x=>x.MaKH));
+            KhachHangList = new ObservableCollection<tblKhachHang>(DataProvider.Ins.DB.tblKhachHang.OrderByDescending(x=>x.MaKH).Where(x => x.TrangThai != "Đã Xóa"));
+            SLGD = DataProvider.Ins.DB.tblGiaoDich.Count();
+            Tam = KhachHangList.Count();
+            TongThu = DataProvider.Ins.DB.tblGiaoDich.Sum(x => x.TienThanhToan);
         }
             
 

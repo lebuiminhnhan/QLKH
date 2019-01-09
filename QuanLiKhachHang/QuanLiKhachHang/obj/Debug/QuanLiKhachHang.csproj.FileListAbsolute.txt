@@ -62,3 +62,6 @@ D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\bin\Debug\EntityFramework.xml
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\bin\Debug\EntityFramework.SqlServer.xml
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang_Content.g.cs
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang.csprojAssemblyReference.cache
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\GiaoDichWindow.g.cs
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\GiaoDichWindow.baml

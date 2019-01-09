@@ -70,28 +70,28 @@
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Text="Quản Lí Khách Hàng" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Text="Quản Lí Thông Tin Khách Hàng" HorizontalAlignment="Center"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24"  Kind="Human" />
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" ToolTip="Sản Phẩm">
+                    <Button Grid.Column="1" Command="{Binding GiaoDichCommand}" ToolTip="Quản Lí Giao Dịch">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Text="Sản Phẩm" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Text="Quản Lí Giao Dịch" HorizontalAlignment="Center"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Package" />
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="2" ToolTip="Thống Kê">
+                    <Button Grid.Column="5" ToolTip="Thống Kê">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -105,21 +105,21 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="3" ToolTip="Lịch Sử Giao Dịch">
+                    <Button Grid.Column="2" ToolTip="Quản Lí Ưu Đãi">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Text="Lịch Sử Giao Dịch" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Text="Quản Lí Ưu Đãi" HorizontalAlignment="Center"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Altimeter" />
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="4" ToolTip="Nhà cung cấp">
+                    <Button Grid.Column="4" ToolTip="Sản Phẩm và Nhà Cung Cấp">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -133,7 +133,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="5" ToolTip="Tìm Kiếm">
+                    <Button Grid.Column="3" ToolTip="Tìm Kiếm">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -289,6 +289,7 @@
                                 <ColumnDefinition Width="auto"></ColumnDefinition>
                                 <ColumnDefinition Width="auto"></ColumnDefinition>
                                 <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
 
                             </Grid.ColumnDefinitions>
 
@@ -350,12 +351,21 @@
                                             Content="Lọc"
                                             ToolTip="Resource name: MaterialDesignRaisedButton"></Button>
                             </Grid>
+                            <Grid Grid.Column="4">
+                                <Button Command="{Binding Refresh}"  Style="{StaticResource MaterialDesignRaisedButton}" Margin="5"
+                                            Width="100"
+                                            Content="Refresh"
+                                            ToolTip="Resource name: MaterialDesignRaisedButton" Background="#FF6CC521" ></Button>
+                            </Grid>
+
                         </Grid>
 
-                        <Grid Grid.Row="1">
-                            <Separator></Separator>
+                        <Grid Grid.Row="1" Background="#FF9E3200">
+                            
+                            <Label Content="DANH SÁCH KHÁCH HÀNG SIÊU THỊ VINMART TRÀ VINH" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" Foreground="#DDF7F5F5"></Label>
                         </Grid>
                         <Grid Grid.Row="2">
+                           
                             <ListView ItemsSource="{Binding KhachHangList}">
                                 <ListView.View>
                                     <GridView>
@@ -367,6 +377,8 @@
                                         <GridViewColumn Header="Điện Thoại" DisplayMemberBinding="{Binding SDT}"></GridViewColumn>
                                         <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DiaChi}"></GridViewColumn>
                                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
+                                        <GridViewColumn Header="Điểm Lưu" DisplayMemberBinding="{Binding DiemLuu}"></GridViewColumn>
+
                                         <GridViewColumn Header="Điểm Tích Lũy" DisplayMemberBinding="{Binding DiemTichLuy}"></GridViewColumn>
                                         <GridViewColumn Header="Loại Khách Hàng" DisplayMemberBinding="{Binding LoaiKhachHang}"></GridViewColumn>
                                     </GridView>

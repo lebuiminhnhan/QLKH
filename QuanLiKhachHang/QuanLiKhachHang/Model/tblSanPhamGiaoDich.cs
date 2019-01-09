@@ -18,7 +18,7 @@ namespace QuanLiKhachHang.Model
         public int MaSP { get; set; }
         public int SoLuong { get; set; }
     
-        public virtual tblGiaoDich tblGiaoDich { get; set; }
         public virtual tblSanPham tblSanPham { get; set; }
+        public virtual tblGiaoDich tblGiaoDich { get; set; }
     }
 }

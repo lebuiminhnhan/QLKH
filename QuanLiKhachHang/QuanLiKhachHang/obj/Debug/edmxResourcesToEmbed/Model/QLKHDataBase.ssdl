@@ -10,6 +10,16 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="tblCoUuDai">
+    <Key>
+      <PropertyRef Name="MaUD" />
+      <PropertyRef Name="MaKH" />
+      <PropertyRef Name="MaGD" />
+    </Key>
+    <Property Name="MaUD" Type="int" Nullable="false" />
+    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="MaGD" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="tblGiaoDich">
     <Key>
       <PropertyRef Name="MaGD" />
@@ -19,8 +29,8 @@
     <Property Name="TienThanhToan" Type="int" Nullable="false" />
     <Property Name="DiemTich" Type="int" Nullable="false" />
     <Property Name="TienGiam" Type="int" Nullable="false" />
-    <Property Name="TienKhachTra" Type="int" Nullable="false" />
-    <Property Name="TienTraLai" Type="int" Nullable="false" />
+    <Property Name="DiemTru" Type="int" Nullable="false" />
+    <Property Name="TrangThai" Type="int" Nullable="false" />
     <Property Name="MaNV" Type="int" Nullable="false" />
     <Property Name="MaKH" Type="int" Nullable="false" />
   </EntityType>
@@ -29,15 +39,17 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTen" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="GioiTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="NamSinh" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CMND" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="SDT" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GioiTinh" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NamSinh" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CMND" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SDT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiemLuu" Type="int" />
     <Property Name="DiemTichLuy" Type="int" Nullable="false" />
-    <Property Name="LoaiKhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoaiKhachHang" Type="nvarchar(max)" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblLichSuGiaoDich">
     <Key>
@@ -114,6 +126,49 @@
     <Property Name="MaNV" Type="int" />
     <Property Name="MaKH" Type="int" />
   </EntityType>
+  <EntityType Name="tblUuDai">
+    <Key>
+      <PropertyRef Name="MaUD" />
+    </Key>
+    <Property Name="MaUD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenUD" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblCoUuDai_tblGiaoDich">
+    <End Role="tblGiaoDich" Type="Self.tblGiaoDich" Multiplicity="1" />
+    <End Role="tblCoUuDai" Type="Self.tblCoUuDai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiaoDich">
+        <PropertyRef Name="MaGD" />
+      </Principal>
+      <Dependent Role="tblCoUuDai">
+        <PropertyRef Name="MaGD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCoUuDai_tblKhachHang">
+    <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1" />
+    <End Role="tblCoUuDai" Type="Self.tblCoUuDai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblKhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="tblCoUuDai">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCoUuDai_tblUuDai">
+    <End Role="tblUuDai" Type="Self.tblUuDai" Multiplicity="1" />
+    <End Role="tblCoUuDai" Type="Self.tblCoUuDai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUuDai">
+        <PropertyRef Name="MaUD" />
+      </Principal>
+      <Dependent Role="tblCoUuDai">
+        <PropertyRef Name="MaUD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblGiaoDich_tblKhachHang">
     <End Role="tblKhachHang" Type="Self.tblKhachHang" Multiplicity="1" />
     <End Role="tblGiaoDich" Type="Self.tblGiaoDich" Multiplicity="*" />
@@ -248,6 +303,7 @@
   </Association>
   <EntityContainer Name="QLKHModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCoUuDai" EntityType="Self.tblCoUuDai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblGiaoDich" EntityType="Self.tblGiaoDich" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblKhachHang" EntityType="Self.tblKhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblLichSuGiaoDich" EntityType="Self.tblLichSuGiaoDich" Schema="dbo" store:Type="Tables" />
@@ -258,6 +314,19 @@
     <EntitySet Name="tblSanPham" EntityType="Self.tblSanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblSanPhamGiaoDich" EntityType="Self.tblSanPhamGiaoDich" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblTaiKhoan" EntityType="Self.tblTaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUuDai" EntityType="Self.tblUuDai" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblCoUuDai_tblGiaoDich" Association="Self.FK_tblCoUuDai_tblGiaoDich">
+      <End Role="tblGiaoDich" EntitySet="tblGiaoDich" />
+      <End Role="tblCoUuDai" EntitySet="tblCoUuDai" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCoUuDai_tblKhachHang" Association="Self.FK_tblCoUuDai_tblKhachHang">
+      <End Role="tblKhachHang" EntitySet="tblKhachHang" />
+      <End Role="tblCoUuDai" EntitySet="tblCoUuDai" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCoUuDai_tblUuDai" Association="Self.FK_tblCoUuDai_tblUuDai">
+      <End Role="tblUuDai" EntitySet="tblUuDai" />
+      <End Role="tblCoUuDai" EntitySet="tblCoUuDai" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblGiaoDich_tblKhachHang" Association="Self.FK_tblGiaoDich_tblKhachHang">
       <End Role="tblKhachHang" EntitySet="tblKhachHang" />
       <End Role="tblGiaoDich" EntitySet="tblGiaoDich" />

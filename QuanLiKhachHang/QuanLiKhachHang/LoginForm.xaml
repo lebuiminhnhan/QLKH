@@ -38,7 +38,7 @@
             <Button
     Style="{DynamicResource MaterialDesignRaisedButton}"
     materialDesign:ShadowAssist.ShadowDepth="Depth5">
-                Siêu thị Co.op Mart Trà Vinh
+                Siêu thị VinMart Trà Vinh
             </Button>
         </Grid>
         <Button x:Name="BtnThoat"

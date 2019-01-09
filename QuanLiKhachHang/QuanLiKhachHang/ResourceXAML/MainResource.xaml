@@ -4,4 +4,7 @@
                     xmlns:local="clr-namespace:QuanLiKhachHang.ResourceXAML">
                      <viewmodel:LoginViewModel x:Key="LoginVM" ></viewmodel:LoginViewModel>
                        <viewmodel:MainViewModel x:Key="MainVM" ></viewmodel:MainViewModel>
+                        <viewmodel:CustomerViewModel x:Key="CustomerVM"></viewmodel:CustomerViewModel>
+                         <viewmodel:GiaoDichViewModel x:Key="GiaoDichVM"></viewmodel:GiaoDichViewModel>
+                    
 </ResourceDictionary>

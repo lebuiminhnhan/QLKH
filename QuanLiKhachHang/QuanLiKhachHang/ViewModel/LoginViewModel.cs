@@ -52,7 +52,7 @@ namespace QuanLiKhachHang.ViewModel
             staff
              */
 
-
+            
             int accCount = DataProvider.Ins.DB.tblTaiKhoan.Where(x => x.TenDangNhap == UserName && x.MatKhau == Password).Count();
 
             if (accCount > 0)

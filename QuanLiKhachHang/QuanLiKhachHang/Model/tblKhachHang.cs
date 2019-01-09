@@ -17,6 +17,7 @@ namespace QuanLiKhachHang.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblKhachHang()
         {
+            this.tblCoUuDai = new HashSet<tblCoUuDai>();
             this.tblGiaoDich = new HashSet<tblGiaoDich>();
             this.tblLichSuGiaoDich = new HashSet<tblLichSuGiaoDich>();
             this.tblTaiKhoan = new HashSet<tblTaiKhoan>();
@@ -30,9 +31,13 @@ namespace QuanLiKhachHang.Model
         public string SDT { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
+        public Nullable<int> DiemLuu { get; set; }
         public int DiemTichLuy { get; set; }
         public string LoaiKhachHang { get; set; }
+        public string TrangThai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblCoUuDai> tblCoUuDai { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblGiaoDich> tblGiaoDich { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

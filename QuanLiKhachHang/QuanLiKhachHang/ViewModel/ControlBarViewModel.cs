@@ -20,6 +20,8 @@ namespace QuanLiKhachHang.ViewModel
 
         public ControlBarViewModel()
         {
+
+
             CloseWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
                 FrameworkElement window = GetWindowParent(p);
                 var w = window as Window;
@@ -28,6 +30,9 @@ namespace QuanLiKhachHang.ViewModel
                     w.Close();
                 }
             }
+
+
+
             );
             MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
             {
@@ -41,6 +46,8 @@ namespace QuanLiKhachHang.ViewModel
                         w.WindowState = WindowState.Normal;
                 }
             }
+
+
             );
             MinimizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
             {
@@ -54,6 +61,9 @@ namespace QuanLiKhachHang.ViewModel
                         w.WindowState = WindowState.Maximized;
                 }
             }
+
+
+
             );
             MouseMoveWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
             {
@@ -67,6 +77,8 @@ namespace QuanLiKhachHang.ViewModel
            );
         }
 
+        
+
         FrameworkElement GetWindowParent(UserControl p)
         {
             FrameworkElement parent = p;
@@ -78,5 +90,7 @@ namespace QuanLiKhachHang.ViewModel
 
             return parent;
         }
+
+
     }
 }
