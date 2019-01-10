@@ -105,14 +105,14 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="2" ToolTip="Quản Lí Ưu Đãi">
+                    <Button Grid.Column="2" ToolTip="In Mã Thẻ">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Text="Quản Lí Ưu Đãi" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock Text="In Mã Thẻ" HorizontalAlignment="Center"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Altimeter" />

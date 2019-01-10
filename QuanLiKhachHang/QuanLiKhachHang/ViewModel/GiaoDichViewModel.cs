@@ -12,11 +12,24 @@ namespace QuanLiKhachHang.ViewModel
 {
     public class GiaoDichViewModel : BaseViewModel
     {
-        private ObservableCollection<tblKhachHang> _KhachHangList;
-        public ObservableCollection<tblKhachHang> KhachHangList { get => _KhachHangList; set { _KhachHangList = value; OnPropertyChanged(); } }
+        private ObservableCollection<ListKHnew> _List;
+        public ObservableCollection<ListKHnew> List { get => _List; set { _List = value; OnPropertyChanged(); } }
 
-        private tblKhachHang _SelectedItem;
-        public tblKhachHang SelectedItem
+        private ObservableCollection<tblSanPhamGiaoDich> _ListGD;
+        public ObservableCollection<tblSanPhamGiaoDich> ListGD { get => _ListGD; set { _ListGD = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<tblNhanVien> _ListNV;
+        public ObservableCollection<tblNhanVien> ListNV { get { return _ListNV; } set { _ListNV = value; OnPropertyChanged(); } }
+
+        private tblNhanVien _SNV;
+        public tblNhanVien SNV { get { return _SNV; } set { _SNV = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<tblKhachHang> _ListKH;
+        public ObservableCollection<tblKhachHang> ListKH { get => _ListKH; set { _ListKH = value; OnPropertyChanged(); } }
+
+
+        private ListKHnew _SelectedItem;
+        public ListKHnew SelectedItem
         {
             get => _SelectedItem;
             set
@@ -25,56 +38,88 @@ namespace QuanLiKhachHang.ViewModel
                 OnPropertyChanged();
                 if (SelectedItem != null)
                 {
-                    MaKH = SelectedItem.MaKH;
+                    MaGD = SelectedItem.MaGD;
 
-                    HoTen = SelectedItem.HoTen;
-                    GioiTinh = SelectedItem.GioiTinh;
-                    NamSinh = SelectedItem.NamSinh;
-                    SDT = SelectedItem.SDT;
-                    DiaChi = SelectedItem.DiaChi;
-                    CMND = SelectedItem.CMND;
-                    Email = SelectedItem.Email;
+                    NgayGiaoDich = SelectedItem.NgayGiaoDich;
+                    DiemTichLuy = SelectedItem.DiemTich;
+                    MaKH = SelectedItem.MaKH;
+                    MaNVGD = SelectedItem.MaNV;
+                    TienThanhToan = SelectedItem.TienThanhToan;
+                    TienGiam = SelectedItem.TienGiam;
+                    DiemTru = SelectedItem.DiemTru;
                 }
             }
         }
 
-        private string _HoTen;
-        public string HoTen { get => _HoTen; set { _HoTen = value; OnPropertyChanged(); } }
+        private tblSanPhamGiaoDich _SelectedItemSP;
+        public tblSanPhamGiaoDich SelectedItemSP
+        {
+            get => _SelectedItemSP;
+            set
+            {
+                _SelectedItemSP = value;
+                OnPropertyChanged();
+                if (SelectedItemSP != null)
+                {
+                    MaGDSP = SelectedItemSP.MaGD;
 
-        private string _CMND;
-        public string CMND { get => _CMND; set { _CMND = value; OnPropertyChanged(); } }
+                    MaSP = SelectedItemSP.MaSP;
 
-        private string _NamSinh;
-        public string NamSinh { get => _NamSinh; set { _NamSinh = value; OnPropertyChanged(); } }
+                    SoLuong = SelectedItemSP.SoLuong;
+                }
+            }
+        }
 
-        private string _GioiTinh;
-        public string GioiTinh { get => _GioiTinh; set { _GioiTinh = value; OnPropertyChanged(); } }
+        private int _MaSP;
+        public int MaSP { get => _MaSP; set { _MaSP = value; OnPropertyChanged(); } }
 
-        private string _SDT;
-        public string SDT { get => _SDT; set { _SDT = value; OnPropertyChanged(); } }
-
-        private string _Email;
-        public string Email { get => _Email; set { _Email = value; OnPropertyChanged(); } }
-
-        private string _DiaChi;
-        public string DiaChi { get => _DiaChi; set { _DiaChi = value; OnPropertyChanged(); } }
-
-        private string _LoaiKH;
-        public string LoaiKH { get => _LoaiKH; set { _LoaiKH = value; OnPropertyChanged(); } }
 
         private int _MaKH;
         public int MaKH { get => _MaKH; set { _MaKH = value; OnPropertyChanged(); } }
 
+        private string _TenKH;
+        public string TenKH { get => _TenKH; set { _TenKH = value; OnPropertyChanged(); } }
+
+        private string _TenNV;
+        public string TenNV { get => _TenNV; set { _TenNV = value; OnPropertyChanged(); } }
+
+
+        private int _MaGD;
+        public int MaGD { get => _MaGD; set { _MaGD = value; OnPropertyChanged(); } }
+        private int _MaGDSP;
+        public int MaGDSP { get => _MaGDSP; set { _MaGDSP = value; OnPropertyChanged(); } }
+
+        private int _MaNVGD;
+        public int MaNVGD { get => _MaNVGD; set { _MaNVGD = value; OnPropertyChanged(); } }
+
+        private DateTime _NgayGiaoDich;
+        public DateTime NgayGiaoDich { get => _NgayGiaoDich; set { _NgayGiaoDich = value; OnPropertyChanged(); } }
+
+        private int _TienThanhToan;
+        public int TienThanhToan { get => _TienThanhToan; set { _TienThanhToan = value; OnPropertyChanged(); } }
+
+        private int _TienGiam;
+        public int TienGiam { get => _TienGiam; set { _TienGiam = value; OnPropertyChanged(); } }
+
+
         private int _DiemTichLuy;
         public int DiemTichLuy { get => _DiemTichLuy; set { _DiemTichLuy = value; OnPropertyChanged(); } }
 
-        private int _DiemLuu;
-        public int DiemLuu { get => _DiemLuu; set { _DiemLuu = value; OnPropertyChanged(); } }
+        private int _DiemTru;
+        public int DiemTru { get => _DiemTru; set { _DiemTru = value; OnPropertyChanged(); } }
+
+        private int _SoLuong;
+        public int SoLuong { get => _SoLuong; set { _SoLuong = value; OnPropertyChanged(); } }
 
 
         public ICommand AddCommand { get; set; }
         public ICommand EditCommand { get; set; }
-        public ICommand EditCommand1 { get; set; }
+        public ICommand DeleteCommand { get; set; }
+
+        public ICommand AddCommandSP { get; set; }
+        public ICommand EditCommandSP { get; set; }
+        public ICommand DeleteCommandSP { get; set; }
+       
 
         private List<String> _property;
         public List<String> Property
@@ -88,23 +133,63 @@ namespace QuanLiKhachHang.ViewModel
 
         }
 
-
-
+    
         public void LoadDL()
         {
-            KhachHangList = new ObservableCollection<tblKhachHang>(DataProvider.Ins.DB.tblKhachHang.OrderByDescending(x => x.MaKH).Where(x => x.TrangThai != "Đã Xóa"));
+            var query = from g in DataProvider.Ins.DB.tblGiaoDich
+                        where g.TrangThai != "Đã Xóa"
+                        select new ListKHnew
+                        {
+                            MaGD = g.MaGD,
+                            TenKH = g.tblKhachHang.HoTen,
+                            TenNV = g.tblNhanVien.HoTen,
+                            TienThanhToan = g.TienThanhToan,
+                            TienGiam = g.TienGiam,
+                            DiemTich = g.DiemTich,
+                            DiemTru = g.DiemTru,
+                            NgayGiaoDich= g.NgayGiaoDich
+                        };
 
+            
+            List = new ObservableCollection<ListKHnew>(query);
+            ListNV = new ObservableCollection<tblNhanVien>(DataProvider.Ins.DB.tblNhanVien.OrderByDescending(x => x.MaNV));
+            ListGD = new ObservableCollection<tblSanPhamGiaoDich>(DataProvider.Ins.DB.tblSanPhamGiaoDich.OrderByDescending(x=>x.MaGD));
         }
         public GiaoDichViewModel()
         {
+
             LoadDL();
+
+            AddCommandSP = new RelayCommand<object>((p) =>
+            {
+                if (string.IsNullOrEmpty(MaGD.ToString()))
+                    return false;
+
+                var displayList = DataProvider.Ins.DB.tblSanPhamGiaoDich.Where(x => x.MaGD == MaGD);
+                if (displayList == null || displayList.Count() != 0)
+                    return true;
+
+                return true;
+
+            }, (p) =>
+            {
+                var sp = new tblSanPhamGiaoDich();
+                sp.MaGD = MaGD;
+                sp.MaSP = MaSP;
+                sp.SoLuong = SoLuong;
+
+                DataProvider.Ins.DB.tblSanPhamGiaoDich.Add(sp);
+                DataProvider.Ins.DB.SaveChanges();
+                LoadDL();
+                MessageBox.Show("Thêm sản phẩm vào giao dịch thành công!");
+            });
 
             AddCommand = new RelayCommand<object>((p) =>
             {
-                if (string.IsNullOrEmpty(MaKH.ToString()))
+                if (string.IsNullOrEmpty(MaGD.ToString()))
                     return false;
 
-                var displayList = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == MaKH);
+                var displayList = DataProvider.Ins.DB.tblGiaoDich.Where(x => x.MaGD == MaGD);
                 if (displayList == null || displayList.Count() != 0)
                     return false;
 
@@ -112,19 +197,18 @@ namespace QuanLiKhachHang.ViewModel
 
             }, (p) =>
             {
-                var khachHang = new tblKhachHang();
-                khachHang.HoTen = HoTen;
-                khachHang.NamSinh = NamSinh;
-                khachHang.SDT = SDT;
-                khachHang.CMND = CMND;
-                khachHang.DiaChi = DiaChi;
-                khachHang.Email = Email;
-                khachHang.GioiTinh = GioiTinh;
-                khachHang.TrangThai = "Hoạt Động";
-                khachHang.DiemLuu = 0;
-                khachHang.DiemTichLuy = 0;
-                khachHang.LoaiKhachHang = "Thường";
-                DataProvider.Ins.DB.tblKhachHang.Add(khachHang);
+                var giaodich = new tblGiaoDich();
+                giaodich.MaGD = MaGD;
+                giaodich.MaKH = MaKH;
+                giaodich.MaNV = MaNVGD;
+                giaodich.TienThanhToan = TienThanhToan;
+                giaodich.TienGiam = TienGiam;
+                giaodich.DiemTich = DiemTichLuy;
+                giaodich.DiemTru = DiemTru;
+                giaodich.TrangThai = "Hoạt Động";
+                giaodich.NgayGiaoDich = NgayGiaoDich;
+               
+                DataProvider.Ins.DB.tblGiaoDich.Add(giaodich);
 
                 try
                 {
@@ -149,8 +233,91 @@ namespace QuanLiKhachHang.ViewModel
                 }
 
 
-                KhachHangList.Add(khachHang);
-                MessageBox.Show("Thêm khách hàng thành công!");
+                
+                var lsgiaodich = new tblLichSuGiaoDich();
+                lsgiaodich.MaGD = MaGD;
+                lsgiaodich.MaKH = MaKH;
+                lsgiaodich.TongTienGD = TienThanhToan;
+                DataProvider.Ins.DB.tblLichSuGiaoDich.Add(lsgiaodich);
+
+                var capnhat = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == MaKH).SingleOrDefault();
+                capnhat.DiemTichLuy = capnhat.DiemTichLuy - DiemTru;
+                capnhat.DiemLuu = capnhat.DiemLuu + DiemTichLuy;
+
+                var uu = new tblCoUuDai();
+
+                if(capnhat.DiemLuu >= 500)
+                {
+                    capnhat.LoaiKhachHang = "Premium";
+                    uu.MaKH = MaKH;
+                    uu.MaGD = MaGD;
+                    uu.MaUD = 1;
+                }
+                if(capnhat.DiemLuu >= 300 && capnhat.DiemLuu<500)
+                {
+                    capnhat.LoaiKhachHang = "VIP";
+                    uu.MaKH = MaKH;
+                    uu.MaGD = MaGD;
+                    uu.MaUD = 4;
+                }
+                if (capnhat.DiemLuu > 100 && capnhat.DiemLuu <300)
+                {
+                    capnhat.LoaiKhachHang = "Thân Thiết";
+                    uu.MaKH = MaKH;
+                    uu.MaGD = MaGD;
+                    uu.MaUD = 3;
+                }
+                if(sn(capnhat.NamSinh,NgayGiaoDich)==true)
+                {
+                    uu.MaKH = MaKH;
+                    uu.MaGD = MaGD;
+                    uu.MaUD = 2;
+                }
+                DataProvider.Ins.DB.SaveChanges();
+                LoadDL();
+                MessageBox.Show("Thêm giao dịch thành công!");
+                SelectedItem = null;
+                TienThanhToan = 0;
+                MaNVGD = 0;
+                MaGD = 0;
+                MaKH = 0;
+                TienGiam = 0;
+                DiemTru = 0;
+                DiemTichLuy = 0;
+                NgayGiaoDich = DateTime.Now;
+            });
+
+
+            EditCommandSP = new RelayCommand<object>((p) =>
+            {
+                if (SelectedItemSP == null)
+                    return false;
+
+                var displayList = DataProvider.Ins.DB.tblSanPhamGiaoDich.Where(x => x.MaGD == MaGDSP);
+                if (displayList == null || displayList.Count() != 0)
+                    return true;
+
+                return false;
+
+            }, (p) =>
+            {
+                var sp = DataProvider.Ins.DB.tblSanPhamGiaoDich.Where(x => x.MaGD == SelectedItemSP.MaGD).SingleOrDefault();
+                sp.MaGD = SelectedItem.MaGD;
+                sp.MaSP = MaSP;
+                sp.SoLuong = SoLuong;
+
+              
+                DataProvider.Ins.DB.SaveChanges();
+                SelectedItemSP.MaGD = MaGDSP;
+                SelectedItemSP.MaSP = MaSP;
+                SelectedItemSP.SoLuong = SoLuong;
+
+                LoadDL();
+                MessageBox.Show("Sửa sản phẩm vào giao dịch thành công!");
+                SelectedItem = null;
+                MaGD = 0;
+                MaSP = 0;
+                SoLuong = 0;
             });
 
             EditCommand = new RelayCommand<object>((p) =>
@@ -158,7 +325,7 @@ namespace QuanLiKhachHang.ViewModel
                 if (SelectedItem == null)
                     return false;
 
-                var displayList = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == MaKH);
+                var displayList = DataProvider.Ins.DB.tblGiaoDich.Where(x => x.MaGD == MaGD);
                 if (displayList == null || displayList.Count() != 0)
                     return true;
 
@@ -166,44 +333,34 @@ namespace QuanLiKhachHang.ViewModel
 
             }, (p) =>
             {
-                var khachHang = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == SelectedItem.MaKH).SingleOrDefault();
-                khachHang.HoTen = HoTen;
-                khachHang.NamSinh = NamSinh;
-                khachHang.SDT = SDT;
-                khachHang.CMND = CMND;
-                khachHang.DiaChi = DiaChi;
-                khachHang.Email = Email;
-                khachHang.GioiTinh = GioiTinh;
+                var giaodich = DataProvider.Ins.DB.tblSanPhamGiaoDich.Where(x => x.MaGD == SelectedItem.MaGD).SingleOrDefault();
+                var sp = new tblSanPhamGiaoDich();
+                sp.MaGD = giaodich.MaGD;
+                sp.MaSP = 
 
                 DataProvider.Ins.DB.SaveChanges();
-
-                SelectedItem.MaKH = MaKH;
-                SelectedItem.HoTen = HoTen;
-                SelectedItem.GioiTinh = GioiTinh;
-                SelectedItem.NamSinh = NamSinh;
-                SelectedItem.SDT = SDT;
-                SelectedItem.DiaChi = DiaChi;
-                SelectedItem.Email = Email;
-                SelectedItem.CMND = CMND;
+                SelectedItem.MaGD = MaGD;
+                
+                
                 LoadDL();
-                MessageBox.Show("Sửa khách hàng thành công!");
+                MessageBox.Show("Sửa giao dịch thành công!");
                 SelectedItem = null;
+                TienThanhToan = 0;
+                MaNVGD = 0;
+                MaGD = 0;
                 MaKH = 0;
-                HoTen = null;
-                SDT = null;
-                CMND = null;
-                DiaChi = null;
-                Email = null;
-                GioiTinh = null;
-                NamSinh = null;
+                TienGiam = 0;
+                DiemTru = 0;
+                DiemTichLuy = 0;
+                NgayGiaoDich = DateTime.Now;
             });
 
-            EditCommand1 = new RelayCommand<object>((p) =>
+            DeleteCommand = new RelayCommand<object>((p) =>
             {
                 if (SelectedItem == null)
                     return false;
 
-                var displayList = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == MaKH);
+                var displayList = DataProvider.Ins.DB.tblGiaoDich.Where(x => x.MaGD == MaGD);
                 if (displayList == null || displayList.Count() != 0)
                     return true;
 
@@ -211,31 +368,56 @@ namespace QuanLiKhachHang.ViewModel
 
             }, (p) =>
             {
-                var khachHang = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == SelectedItem.MaKH).SingleOrDefault();
-                khachHang.TrangThai = "Đã Xóa";
+                var giaodich = DataProvider.Ins.DB.tblGiaoDich.Where(x => x.MaGD == SelectedItem.MaGD).SingleOrDefault();
+                giaodich.TrangThai = "Đã Xóa";
 
                 DataProvider.Ins.DB.SaveChanges();
-
+                SelectedItem.MaGD = MaGD;
                 SelectedItem.MaKH = MaKH;
-                SelectedItem.HoTen = HoTen;
-                SelectedItem.GioiTinh = GioiTinh;
-                SelectedItem.NamSinh = NamSinh;
-                SelectedItem.SDT = SDT;
-                SelectedItem.DiaChi = DiaChi;
-                SelectedItem.Email = Email;
-                SelectedItem.CMND = CMND;
+                SelectedItem.MaNV = MaNVGD;
+                SelectedItem.TienGiam = TienGiam;
+                SelectedItem.TienThanhToan = TienThanhToan;
+                SelectedItem.DiemTich = DiemTichLuy;
+                SelectedItem.DiemTru = DiemTru;
+                SelectedItem.NgayGiaoDich = NgayGiaoDich;
+
                 LoadDL();
-                MessageBox.Show("Xóa khách hàng thành công!");
+                MessageBox.Show("Xóa giao dịch thành công!");
                 SelectedItem = null;
+                TienThanhToan = 0;
+                MaNVGD = 0;
+                MaGD = 0;
                 MaKH = 0;
-                HoTen = null;
-                SDT = null;
-                CMND = null;
-                DiaChi = null;
-                Email = null;
-                GioiTinh = null;
-                NamSinh = null;
+                TienGiam = 0;
+                DiemTru = 0;
+                DiemTichLuy = 0;
+                NgayGiaoDich = DateTime.Now;
             });
         }
+        public bool sn(DateTime n1, DateTime n2)
+        {
+            if (n1.Day == n2.Day && n1.Month == n2.Month)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    
+    public class ListKHnew
+    {
+        public int MaGD { get; set; }
+        public string TenKH { get; set; }
+        public string TenNV { get; set; }
+        public int TienThanhToan { get; set; }
+        public int TienGiam { get; set; }
+        public int DiemTich { get; set; }
+        public int MaKH { get; set; }
+        public int MaNV { get; set; }
+        public int DiemTru { get; set; }
+        public DateTime NgayGiaoDich { get; set; }
     }
 }

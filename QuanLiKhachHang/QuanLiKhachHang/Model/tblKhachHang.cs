@@ -26,7 +26,7 @@ namespace QuanLiKhachHang.Model
         public int MaKH { get; set; }
         public string HoTen { get; set; }
         public string GioiTinh { get; set; }
-        public string NamSinh { get; set; }
+        public System.DateTime NamSinh { get; set; }
         public string CMND { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }

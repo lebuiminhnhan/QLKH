@@ -45,8 +45,8 @@ namespace QuanLiKhachHang.ViewModel
         private string _CMND;
         public string CMND { get => _CMND; set { _CMND = value; OnPropertyChanged(); } }
 
-        private string _NamSinh;
-        public string NamSinh { get => _NamSinh; set { _NamSinh = value; OnPropertyChanged(); } }
+        private DateTime _NamSinh;
+        public DateTime NamSinh { get => _NamSinh; set { _NamSinh = value; OnPropertyChanged(); } }
 
         private string _GioiTinh;
         public string GioiTinh { get => _GioiTinh; set { _GioiTinh = value; OnPropertyChanged(); } }
@@ -133,6 +133,7 @@ namespace QuanLiKhachHang.ViewModel
                 }
                 catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                 {
+                    MessageBox.Show("Lỗi");
                     Exception raise = dbEx;
                     foreach (var validationErrors in dbEx.EntityValidationErrors)
                     {
@@ -147,11 +148,21 @@ namespace QuanLiKhachHang.ViewModel
                         }
                     }
                     throw raise;
+                    
                 }
-                
 
-                KhachHangList.Add(khachHang);
+
+                LoadDL();
                 MessageBox.Show("Thêm khách hàng thành công!");
+                SelectedItem = null;
+                MaKH = 0;
+                HoTen = null;
+                SDT = null;
+                CMND = null;
+                DiaChi = null;
+                Email = null;
+                GioiTinh = null;
+               
             });
 
             EditCommand = new RelayCommand<object>((p) =>
@@ -196,7 +207,7 @@ namespace QuanLiKhachHang.ViewModel
                 DiaChi = null;
                 Email = null;
                 GioiTinh = null;
-                NamSinh = null;
+               
             });
 
             EditCommand1 = new RelayCommand<object>((p) =>
@@ -235,7 +246,7 @@ namespace QuanLiKhachHang.ViewModel
                 DiaChi = null;
                 Email = null;
                 GioiTinh = null;
-                NamSinh = null;
+               
             });
         }
     }

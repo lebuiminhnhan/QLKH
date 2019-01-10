@@ -24,13 +24,13 @@
     <Key>
       <PropertyRef Name="MaGD" />
     </Key>
-    <Property Name="MaGD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NgayGiaoDich" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="MaGD" Type="int" Nullable="false" />
+    <Property Name="NgayGiaoDich" Type="datetime" Nullable="false" />
     <Property Name="TienThanhToan" Type="int" Nullable="false" />
     <Property Name="DiemTich" Type="int" Nullable="false" />
     <Property Name="TienGiam" Type="int" Nullable="false" />
     <Property Name="DiemTru" Type="int" Nullable="false" />
-    <Property Name="TrangThai" Type="int" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MaNV" Type="int" Nullable="false" />
     <Property Name="MaKH" Type="int" Nullable="false" />
   </EntityType>
@@ -41,7 +41,7 @@
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar(max)" Nullable="false" />
     <Property Name="GioiTinh" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NamSinh" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NamSinh" Type="datetime" Nullable="false" />
     <Property Name="CMND" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SDT" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar(max)" Nullable="false" />
