@@ -29,6 +29,9 @@ namespace QuanLiKhachHang.ViewModel
         public ICommand Refresh { get; set; }
         public ICommand CustomerCommand { get; set; }
         public ICommand GiaoDichCommand { get; set; }
+        
+       public ICommand SearchCommand { get; set; }
+
         // mọi thứ xử lý sẽ nằm trong này
         public MainViewModel()
         {
@@ -56,6 +59,7 @@ namespace QuanLiKhachHang.ViewModel
                 }
             }
               );
+            SearchCommand = new RelayCommand<object>((p) => { return true; }, (p) => { SearchWindow wd = new SearchWindow(); wd.ShowDialog(); });
 
             CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { AddCustomer wd = new AddCustomer(); wd.ShowDialog(); });
             GiaoDichCommand = new RelayCommand<object>((p) => { return true; }, (p) => { GiaoDichWindow wd = new GiaoDichWindow(); wd.ShowDialog(); });

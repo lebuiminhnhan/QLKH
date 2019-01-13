@@ -4,30 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="833fc536820b49aea5acadcc34b5f46b" Name="Diagram1">
-        <EntityTypeShape EntityType="QLKHModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblLichSuGiaoDich" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblLoaiSanPham" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblNhaCungCap" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblNhanVien" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblQuyen" Width="1.5" PointX="3.75" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblSanPham" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblSanPhamGiaoDich" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLKHModel.tblTaiKhoan" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+      <Diagram DiagramId="833fc536820b49aea5acadcc34b5f46b" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="QLKHModel.sysdiagrams" Width="1.5" PointX="17.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblLichSuGiaoDich" Width="1.5" PointX="4.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblLoaiSanPham" Width="1.5" PointX="12" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblNhaCungCap" Width="1.5" PointX="12" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblNhanVien" Width="1.5" PointX="12" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblQuyen" Width="1.5" PointX="0.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblSanPham" Width="1.5" PointX="9.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblSanPhamGiaoDich" Width="1.5" PointX="9.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKHModel.tblTaiKhoan" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="QLKHModel.FK_tblSanPham_tblLoaiSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="QLKHModel.FK_tblSanPham_tblNhaCungCap" ManuallyRouted="false" />
         <AssociationConnector Association="QLKHModel.FK_tblTaiKhoan_tblNhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="QLKHModel.FK_tblTaiKhoan_tblQuyen" ManuallyRouted="false" />
         <AssociationConnector Association="QLKHModel.FK_tblSanPhamGiaoDich_tblSanPham" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QLKHModel.tblCoUuDai" Width="1.5" PointX="5.25" PointY="8.375" />
-        <EntityTypeShape EntityType="QLKHModel.tblUuDai" Width="1.5" PointX="3" PointY="1.625" />
+        <EntityTypeShape EntityType="QLKHModel.tblCoUuDai" Width="1.5" PointX="5" PointY="4.75" />
+        <EntityTypeShape EntityType="QLKHModel.tblUuDai" Width="1.5" PointX="0.5" PointY="5.125" />
         <AssociationConnector Association="QLKHModel.FK_tblCoUuDai_tblUuDai" />
-        <EntityTypeShape EntityType="QLKHModel.tblGiaoDich" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="QLKHModel.tblGiaoDich" Width="1.5" PointX="7.125" PointY="2.75" />
         <AssociationConnector Association="QLKHModel.FK_tblCoUuDai_tblGiaoDich" />
         <AssociationConnector Association="QLKHModel.FK_tblGiaoDich_tblNhanVien" />
         <AssociationConnector Association="QLKHModel.FK_tblLichSuGiaoDich_tblGiaoDich" />
         <AssociationConnector Association="QLKHModel.FK_tblSanPhamGiaoDich_tblGiaoDich" />
-        <EntityTypeShape EntityType="QLKHModel.tblKhachHang" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="QLKHModel.tblKhachHang" Width="1.5" PointX="2.625" PointY="2.75" />
         <AssociationConnector Association="QLKHModel.FK_tblCoUuDai_tblKhachHang" />
         <AssociationConnector Association="QLKHModel.FK_tblGiaoDich_tblKhachHang" />
         <AssociationConnector Association="QLKHModel.FK_tblLichSuGiaoDich_tblKhachHang" />

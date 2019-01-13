@@ -6,5 +6,5 @@
                        <viewmodel:MainViewModel x:Key="MainVM" ></viewmodel:MainViewModel>
                         <viewmodel:CustomerViewModel x:Key="CustomerVM"></viewmodel:CustomerViewModel>
                          <viewmodel:GiaoDichViewModel x:Key="GiaoDichVM"></viewmodel:GiaoDichViewModel>
-                    
+    <viewmodel:SearchViewModel x:Key="SVM"></viewmodel:SearchViewModel>
 </ResourceDictionary>

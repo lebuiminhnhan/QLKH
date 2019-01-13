@@ -49,6 +49,10 @@
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -141,12 +145,16 @@
     <Compile Include="MyUserControl\UserControlBar.xaml.cs">
       <DependentUpon>UserControlBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchWindow.xaml.cs">
+      <DependentUpon>SearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\GiaoDichViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
     <Page Include="AddCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

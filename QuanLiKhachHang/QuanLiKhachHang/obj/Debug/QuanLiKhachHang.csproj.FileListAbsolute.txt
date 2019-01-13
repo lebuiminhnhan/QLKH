@@ -65,3 +65,5 @@ D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\QuanLiKhachHang.csprojAssemblyReference.cache
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\GiaoDichWindow.g.cs
 D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\GiaoDichWindow.baml
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\SearchWindow.g.cs
+D:\hockicuoi2018\WPFChuyenNganh\QuanLiKhachHang\QuanLiKhachHang\QuanLiKhachHang\obj\Debug\SearchWindow.baml
