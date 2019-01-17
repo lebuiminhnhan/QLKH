@@ -77,7 +77,7 @@
                             <Grid Grid.Column="0">
                                 <StackPanel >
                                     <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
+                                 Content="{Binding Path=HoTen, Mode=OneWay}"
                                 Width="500"
                                 Margin="5"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
@@ -89,7 +89,7 @@
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
                                 Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
+                                  Content="{Binding Path=MaKH, Mode=OneWay}"
                                 Width="500"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
                                  IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
@@ -99,7 +99,7 @@
                                         </materialDesign:Chip.Icon>
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
+                                 Content="{Binding Path=NamSinh, Mode=OneWay}"
                                 Width="500"
                                 Margin="5"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
@@ -111,7 +111,7 @@
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
                                 Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
+                                  Content="{Binding Path=DiaChi, Mode=OneWay}"
                                 Width="500"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
                                  IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
@@ -121,7 +121,7 @@
                                         </materialDesign:Chip.Icon>
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
+                                 Content="{Binding Path=SDT, Mode=OneWay}"
                                 Width="500"
                                 Margin="5"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
@@ -133,7 +133,7 @@
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
                                 Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
+                                  Content="{Binding Path=DiemTichLuy, Mode=OneWay,StringFormat=\{0\} điểm}"
                                 Width="500"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
                                  IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
@@ -144,7 +144,7 @@
                                     </materialDesign:Chip>
 
                                     <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
+                                 Content="{Binding Path=LoaiKH, Mode=OneWay}"
                                 Width="500"
                                 Margin="5"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
@@ -156,7 +156,7 @@
                                     </materialDesign:Chip>
                                     <materialDesign:Chip
                                 Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
+                                  Content="{Binding Path=DiemLuu, Mode=OneWay}"
                                 Width="500"
                                  IconBackground="{DynamicResource PrimaryHueDarkBrush}"
                                  IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
@@ -174,96 +174,52 @@
                             </Grid>
                             <Grid Grid.Column="1">
                                 <StackPanel >
-                                    <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                Margin="5"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="User"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="IdentificationCard"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                Margin="5"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="DateRange"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="AddressMarker"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                Margin="5"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="Phone"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="Contrast"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
+                                    <Label Content="Lịch Sử Giao Dịch" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center" Foreground="#DDF7F5F5" Background="#FFC50808"></Label>
 
-                                    <materialDesign:Chip
-                                 Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                Margin="5"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="Crown"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip
-                                Margin="5"
-                                  Content="{Binding Path=TongThu, Mode=OneWay}"
-                                Width="500"
-                                 IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                 IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                                        <materialDesign:Chip.Icon>
-                                            <materialDesign:PackIcon
-                                         Kind="CurrencyUsd"></materialDesign:PackIcon>
-                                        </materialDesign:Chip.Icon>
-                                    </materialDesign:Chip>
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                        <ListView ItemsSource="{Binding List , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Width="907">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Mã Giao Dịch" DisplayMemberBinding="{Binding MaGD}"></GridViewColumn>
+                                                    <GridViewColumn Header="Nhân Viên" DisplayMemberBinding="{Binding TenNV}"></GridViewColumn>
+                                                    <GridViewColumn Header="Tiền Thanh Toán" DisplayMemberBinding="{Binding TienThanhToan}"></GridViewColumn>
+                                                    <GridViewColumn Header="Điểm Tích" DisplayMemberBinding="{Binding DiemTich}"></GridViewColumn>
+                                                    <GridViewColumn Header="Điểm Trừ" DisplayMemberBinding="{Binding DiemTru}"></GridViewColumn>
+                                                    <GridViewColumn Header="Tiền Giảm" DisplayMemberBinding="{Binding TienGiam}"></GridViewColumn>
+                                                    <GridViewColumn Header="Ngày Giao Dịch" DisplayMemberBinding="{Binding NgayGiaoDich}"></GridViewColumn>
 
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </ScrollViewer>
+
+                                    <Label Content="Sản Phẩm Đã Mua" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center" Foreground="#DDF7F5F5" Background="#FFC50808"></Label>
+
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                        <ListView ItemsSource="{Binding ListGD , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Width="552">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Mã Giao Dịch" DisplayMemberBinding="{Binding MaGDS}"></GridViewColumn>
+                                                    <GridViewColumn Header="Sản phẩm" DisplayMemberBinding="{Binding TenSPs}"></GridViewColumn>
+                                                    <GridViewColumn Header="Số Lượng" DisplayMemberBinding="{Binding SL}"></GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </ScrollViewer>
+
+
+                                    <Label Content="Ưu Đãi Hiện Có" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center" Foreground="#DDF7F5F5" Background="#FFC50808"></Label>
+
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <ListView ItemsSource="{Binding ListUD , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Width="907">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Ưu đãi" DisplayMemberBinding="{Binding TUD}"></GridViewColumn>
+                                                    
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </ScrollViewer>
 
 
 

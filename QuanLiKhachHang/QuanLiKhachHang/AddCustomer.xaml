@@ -82,10 +82,7 @@
                                 <GridViewColumn Header="Điện Thoại" DisplayMemberBinding="{Binding SDT}"></GridViewColumn>
                                 <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding DiaChi}"></GridViewColumn>
                                 <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
-                                <GridViewColumn Header="Điểm Tích Lũy" DisplayMemberBinding="{Binding DiemTichLuy}"></GridViewColumn>
-                                <GridViewColumn Header="Điểm Lưu" DisplayMemberBinding="{Binding DiemLuu}"></GridViewColumn>
-
-                                <GridViewColumn Header="Loại Khách Hàng" DisplayMemberBinding="{Binding LoaiKhachHang}"></GridViewColumn>
+                                
                             </GridView>
                         </ListView.View>
                     </ListView>

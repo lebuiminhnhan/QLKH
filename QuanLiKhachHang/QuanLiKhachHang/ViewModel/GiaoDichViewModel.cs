@@ -243,7 +243,7 @@ namespace QuanLiKhachHang.ViewModel
                 var capnhat = DataProvider.Ins.DB.tblKhachHang.Where(x => x.MaKH == MaKH).SingleOrDefault();
                 capnhat.DiemTichLuy = capnhat.DiemTichLuy - DiemTru;
                 capnhat.DiemLuu = capnhat.DiemLuu + DiemTichLuy;
-
+                capnhat.DiemTichLuy = capnhat.DiemTichLuy + DiemTichLuy;
                 var uu = new tblCoUuDai();
 
                 if(capnhat.DiemLuu >= 500)
@@ -252,6 +252,8 @@ namespace QuanLiKhachHang.ViewModel
                     uu.MaKH = MaKH;
                     uu.MaGD = MaGD;
                     uu.MaUD = 1;
+                    DataProvider.Ins.DB.tblCoUuDai.Add(uu);
+                    DataProvider.Ins.DB.SaveChanges();
                 }
                 if(capnhat.DiemLuu >= 300 && capnhat.DiemLuu<500)
                 {
@@ -259,6 +261,8 @@ namespace QuanLiKhachHang.ViewModel
                     uu.MaKH = MaKH;
                     uu.MaGD = MaGD;
                     uu.MaUD = 4;
+                    DataProvider.Ins.DB.tblCoUuDai.Add(uu);
+                    DataProvider.Ins.DB.SaveChanges();
                 }
                 if (capnhat.DiemLuu > 100 && capnhat.DiemLuu <300)
                 {
@@ -266,12 +270,16 @@ namespace QuanLiKhachHang.ViewModel
                     uu.MaKH = MaKH;
                     uu.MaGD = MaGD;
                     uu.MaUD = 3;
+                    DataProvider.Ins.DB.tblCoUuDai.Add(uu);
+                    DataProvider.Ins.DB.SaveChanges();
                 }
                 if(sn(capnhat.NamSinh,NgayGiaoDich)==true)
                 {
                     uu.MaKH = MaKH;
                     uu.MaGD = MaGD;
                     uu.MaUD = 2;
+                    DataProvider.Ins.DB.tblCoUuDai.Add(uu);
+                    DataProvider.Ins.DB.SaveChanges();
                 }
                 DataProvider.Ins.DB.SaveChanges();
                 LoadDL();
